@@ -39,7 +39,7 @@ public class Product {
     private String imageUrl;
 
     @Column(name = "active")
-    private Boolean active;
+    private boolean active;
 
     @Column(name = "units_in_stock")
     private int unitsInStock;
@@ -51,5 +51,4 @@ public class Product {
     @Column(name = "last_updated")
     @UpdateTimestamp
     private Date lastUpdated;
-
 }
