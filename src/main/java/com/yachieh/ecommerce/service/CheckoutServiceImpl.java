@@ -20,9 +20,11 @@ public class CheckoutServiceImpl implements CheckoutService {
     public CheckoutServiceImpl(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
+
     @Override
     @Transactional
     public PurchaseResponse placeOrder(Purchase purchase) {
+
         // retrieve the order info from dto
         Order order = purchase.getOrder();
 
@@ -47,7 +49,6 @@ public class CheckoutServiceImpl implements CheckoutService {
         Customer customerFromDB = customerRepository.findByEmail(theEmail);
 
         if (customerFromDB != null) {
-            // we found them, let's assign them accordingly
             customer = customerFromDB;
         }
 
@@ -61,6 +62,7 @@ public class CheckoutServiceImpl implements CheckoutService {
     }
 
     private String generateOrderTrackingNumber() {
+        // generate a random UUID number
         return UUID.randomUUID().toString();
     }
 }

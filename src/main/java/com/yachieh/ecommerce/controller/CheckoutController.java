@@ -3,7 +3,6 @@ package com.yachieh.ecommerce.controller;
 import com.yachieh.ecommerce.dto.Purchase;
 import com.yachieh.ecommerce.dto.PurchaseResponse;
 import com.yachieh.ecommerce.service.CheckoutService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -12,7 +11,6 @@ public class CheckoutController {
 
     private CheckoutService checkoutService;
 
-    @Autowired
     public CheckoutController(CheckoutService checkoutService) {
         this.checkoutService = checkoutService;
     }
@@ -24,5 +22,4 @@ public class CheckoutController {
 
         return purchaseResponse;
     }
-
 }
