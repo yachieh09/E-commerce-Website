@@ -7,8 +7,8 @@ import com.yachieh.ecommerce.dto.Purchase;
 import com.yachieh.ecommerce.dto.PurchaseResponse;
 
 public interface CheckoutService {
-    PurchaseResponse placeOrder(Purchase purchase);
 
+    PurchaseResponse placeOrder(Purchase purchase);
     PaymentIntent createPaymentIntent(PaymentInfo paymentInfo) throws StripeException;
 
 }
